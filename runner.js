@@ -1,6 +1,7 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
+const render = require('./render');
 
 const forbiddenDirs = ['node_modules'];
 
@@ -14,6 +15,9 @@ class Runner {
             console.log(chalk.yellow(`---- ${file.shortName} ----`));
 
             const beforeEaches = [];
+
+            //make this available anywhere
+            global.render = render;
 
             //make this available anywhere
             global.beforeEach = (fn) => {
