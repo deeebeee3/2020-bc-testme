@@ -13,6 +13,8 @@ it('should sum an array', () => {
     });
 
     assert.strictEqual(total, 6);
+
+    //purposely mess up numbers array to test beforeEach works
     numbers.push(3);
     numbers.push(3);
     numbers.push(3);

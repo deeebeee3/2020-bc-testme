@@ -11,16 +11,30 @@ class Runner {
 
             const beforeEaches = [];
 
+            //make this available anywhere
             global.beforeEach = (fn) => {
                 beforeEaches.push(fn);
             }
 
+            //make this available anywhere
             global.it = (desc, fn) => {
                 beforeEaches.forEach(func => func());
-                fn();
+
+                try {
+                    fn();
+                    console.log(`OK - ${desc}`);
+                } catch (err) {
+                    console.log(`X - ${desc}`);
+                    console.log('\t', err.message);
+                }
             };
 
-            require(file.name);
+            try {
+                //execute / run the file
+                require(file.name);
+            } catch (err) {
+                console.log(err);
+            }
         }
     }
 
