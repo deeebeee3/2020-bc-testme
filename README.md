@@ -14,4 +14,12 @@ Setup:
 
 ------------
 
+To run test with Mocha: (npm install mocha -g)
+1) cd sampleProject
+2) type mocha in terminal
+
+------------
+
+
+
 
