@@ -24,10 +24,12 @@ class Runner {
 
                 try {
                     fn();
-                    console.log(chalk.green(`OK - ${desc}`));
+                    console.log(chalk.green(`\tOK - ${desc}`));
                 } catch (err) {
-                    console.log(chalk.red(`X - ${desc}`));
-                    console.log(chalk.red('\t', err.message));
+                    const message = err.message.replace(/\n/g, '\n\t\t');
+
+                    console.log(chalk.red(`\tX - ${desc}`));
+                    console.log(chalk.red('\t', message));
                 }
             };
 

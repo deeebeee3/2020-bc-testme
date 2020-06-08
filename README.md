@@ -20,6 +20,19 @@ To run test with Mocha: (npm install mocha -g)
 
 ------------
 
+REGEX:
+
+//g
+
+/\n/g  -> find all new line 
+
+replace with new line and two tabs
+
+\n\t\t
+
+const message = err.message.replace(/\n/g, '\n\t\t');
+
+------------
 
 
 
