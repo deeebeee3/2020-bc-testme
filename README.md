@@ -34,5 +34,6 @@ const message = err.message.replace(/\n/g, '\n\t\t');
 
 ------------
 
-
+JSDOM Issue - it returns the virtual dom too soon without waiting for all the 
+different scripts and js files to be loaded and executed...
 
